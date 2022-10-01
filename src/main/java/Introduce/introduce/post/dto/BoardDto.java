@@ -2,9 +2,11 @@ package Introduce.introduce.post.dto;
 
 import Introduce.introduce.post.domain.Board;
 import lombok.Builder;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 
+@Getter
 public class BoardDto {
 
     private Long id;

@@ -1,5 +1,6 @@
 package Introduce.introduce.post.domain;
 
+import Introduce.introduce.post.dto.BoardDto;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,6 +35,13 @@ public class Board extends BaseTimeEntity {
         this.age = age;
         this.major = major;
         this.contents = contents;
+    }
+
+    public void update(BoardDto boardDto) {
+        this.title = boardDto.getTitle();
+        this.age = boardDto.getAge();
+        this.major = boardDto.getMajor();
+        this.contents = boardDto.getContents();
     }
 
 }
