@@ -1,5 +1,6 @@
 package Introduce.introduce.post.controller;
 
+import Introduce.introduce.post.domain.Board;
 import Introduce.introduce.post.dto.BoardDto;
 import Introduce.introduce.post.service.BoardService;
 import org.springframework.stereotype.Controller;
@@ -61,4 +62,12 @@ public class BoardController {
         boardService.deletePost(id);
         return "redirect:/";
     }
+
+    @GetMapping("/board/search")
+    public String search(@RequestParam(value="keyword") String keyword, Model model) {
+        List<BoardDto> boardDtoList = boardService.searchPosts(keyword);
+        model.addAttribute("boardList", boardDtoList);
+        return "board/list.html";
+    }
+
 }

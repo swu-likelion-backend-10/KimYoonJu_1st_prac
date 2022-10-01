@@ -5,13 +5,21 @@
   <title>메인 화면</title>
 </head>
 <body>
-<h1>게시물 목록이 출력될 예정입니다.</h1>
+<h1>인적 사항 목록</h1>
+
+<form action="/board/search" method="GET">
+  <div>
+    <input name="keyword" type="text" placeholder="이름을 입력해주세요">
+  </div>
+  <button>검색</button>
+</form>
+
 <a th:href="@{/post}">글쓰기</a>
 <table>
   <thead>
   <tr>
     <th>번호</th>
-    <th>글제목</th>
+    <th>이름</th>
     <th>작성일</th>
   </tr>
   </thead>
